@@ -1,0 +1,66 @@
+Apartat 1
+
+cal afegir 
+PATH="$PATH:." 
+a l'arxiu de configuració de path dins del directori skel
+
+
+Apartat 2
+script : atr.sh
+permisos
+	permisos admin
+descomposicio
+	crear un fitxer amb totes les dades dels usuaris : input_bots.data
+	crear script atr.sh:
+	afegir path opcional
+		llegir del fitxer input_bots.data
+		crear els directoris especificats a l'arrel 
+		filtrar tots els posibles grups (projectes i departaments)
+		crear els grups
+		filtrar tots els posibles usuaris
+		crear els usuaris (passar per parametre:
+			dades personals
+			login
+			[ skelet (alternatiu) ] amb carpetes i archius predefinits
+			asignar terminals
+			asignar grup primari : departaments
+			asignar grups secundaris : projectes
+		deshabilitar contraseña
+		caducar contraseña : per permetre l'usuari asignar li al primer login
+		asignar directori home al corresponene
+	restaurar path
+
+Apartat 3
+script : atr.sh
+permisos
+descomposició
+	fer una cerca als fitxers /etc/passwd i /etc/group
+	per saber si cal afegir usuari/grups o modificarho
+	afegir un bucle per editar un usuari en cas de repetit 
+		no vam tindre clar si era afegir directment del fitxer o manualment per tecla
+	comprovar si els directoris existeixen abans de afegir
+	
+Apartat 4
+script : tp.sh
+permisos
+	pertanyer al grup a on vols entrar
+descomposicio
+	cal executarho al mateix proces del terminal (opció: . comanda) [sembla opcional]...
+	guardar la posicio actual per restaurar al final
+	buscar la posició del directori projecte 
+	accedir al directori projecte
+	conservar el temps inicial 
+	canviarme de grupActiu
+		esperar un exit
+	mirar temps
+	calcular diferencia temps
+	mostrar diferncia per pantalla
+	retornar al directori original
+	restaurar grup actiu
+
+	
+
+
+
+
+
